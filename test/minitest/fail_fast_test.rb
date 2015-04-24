@@ -3,8 +3,13 @@ require "minitest/fail_fast"
 
 module Minitest
   class FailFastTest < Minitest::Test
-    def test_sanity
-      assert_equal 7, 3 + 4
+    (1..100).to_a.shuffle.each do |i|
+      define_method "test_#{i}" do
+        if i == 42
+          flunk
+        else
+        end
+      end
     end
   end
 end

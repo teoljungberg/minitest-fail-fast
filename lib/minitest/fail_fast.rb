@@ -1,5 +1,4 @@
-module Minitest
-  class FailFast
-    VERSION = "0.0.1"
-  end
-end
+require "minitest"
+
+Minitest.load_plugins
+Minitest::FailFastReporter.fail_fast!
