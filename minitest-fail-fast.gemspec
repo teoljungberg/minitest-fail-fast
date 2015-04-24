@@ -1,16 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'minitest/fail_fast'
 
 Gem::Specification.new do |spec|
   spec.name          = "minitest-fail-fast"
-  spec.version       = Minitest::FailFast::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Teo Ljungberg"]
   spec.email         = ["teo@teoljungberg.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Fail and exit as soon as a test fails}
+  spec.description   = %q{Reimplements RSpec's "fail fast" feature for minitest}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
