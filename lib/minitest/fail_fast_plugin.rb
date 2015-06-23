@@ -24,7 +24,7 @@ module Minitest
     end
 
     def record result
-      if result.failures.any?
+      if result.failures.reject{|failure| failure.kind_of?(Minitest::Skip)}.any?
         io.puts
         raise Interrupt
       else
