@@ -1,5 +1,6 @@
 require "test_helper"
 require "minitest/fail_fast"
+Minitest::FailFastReporter.fail_fast!
 
 module Minitest
   class FailFastTest < Minitest::Test
