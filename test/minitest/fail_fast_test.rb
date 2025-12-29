@@ -41,7 +41,7 @@ module Minitest
         # no-op
       end
 
-      assert_equal 1, stats.assertions, "Expected 2 assertions (test_a + test_b), test_c should be skipped"
+      assert_equal 1, stats.assertions
     end
   end
 end
