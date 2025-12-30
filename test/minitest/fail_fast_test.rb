@@ -1,6 +1,7 @@
 require "test_helper"
 require "minitest/fail_fast"
-Minitest::FailFastReporter.fail_fast!
+
+Minitest.load(:fail_fast) if Minitest::VERSION.to_i >= 6
 
 module Minitest
   class FailFastTest < Minitest::Test
