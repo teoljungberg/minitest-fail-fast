@@ -22,12 +22,12 @@ module Minitest
         end
       end
       output = StringIO.new
+      options = { seed: 42 }
       reporter = Minitest::CompositeReporter.new
       stats = Minitest::StatisticsReporter.new(output)
       fail_fast = Minitest::FailFastReporter.new(output)
       reporter << stats
       reporter << fail_fast
-      options = { seed: 42 }
 
       reporter.start
 
