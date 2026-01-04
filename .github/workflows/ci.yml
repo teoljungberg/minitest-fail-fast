@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: ruby-${{ matrix.ruby }} x minitest-${{ matrix.minitest }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
