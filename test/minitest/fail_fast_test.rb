@@ -30,7 +30,6 @@ module Minitest
       reporter << fail_fast
 
       reporter.start
-
       begin
         if klass.respond_to?(:run_suite) # Minitest v6+
           klass.run_suite(reporter, options)
