@@ -24,9 +24,9 @@ module Minitest
       output = StringIO.new
       options = { seed: 42 }
       reporter = Minitest::CompositeReporter.new
-      stats = Minitest::StatisticsReporter.new(output)
+      statistics = Minitest::StatisticsReporter.new(output)
       fail_fast = Minitest::FailFastReporter.new(output)
-      reporter << stats
+      reporter << statistics
       reporter << fail_fast
 
       reporter.start
@@ -41,8 +41,8 @@ module Minitest
         # no-op
       end
 
-      assert_equal 2, stats.count
-      assert_equal 1, stats.assertions
+      assert_equal 2, statistics.count
+      assert_equal 1, statistics.assertions
     end
   end
 end
