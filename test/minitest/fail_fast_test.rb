@@ -41,6 +41,7 @@ module Minitest
         # no-op
       end
 
+      assert_equal 2, stats.count
       assert_equal 1, stats.assertions
     end
   end
