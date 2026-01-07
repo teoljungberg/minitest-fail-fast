@@ -19,13 +19,20 @@ Or install it yourself as:
 
     $ gem install minitest-fail-fast
 
+If you are using Minitest 6+, add this to your `test_helper`:
+
+```ruby
+# Needed for Minitest 6
+Minitest.load :fail_fast
+```
+
 ## Usage
 
 You can either activate the plugin by passing `-f`, `--fail-fast`:
 
     $ TESTOPTS="--fail-fast" bundle exec rake
 
-Or by requiring `minitest/fail_fast` in your `test_helper`:
+Or by requiring `minitest/fail_fast` in your `test_helper`.
 
 ## Contributing
 
