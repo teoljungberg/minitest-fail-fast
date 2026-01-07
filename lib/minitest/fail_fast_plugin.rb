@@ -1,5 +1,3 @@
-require "minitest"
-
 module Minitest
   def self.plugin_fail_fast_options opts, _options
     opts.on "-f", "--fail-fast", "Halt running the test suite when a test fails" do
