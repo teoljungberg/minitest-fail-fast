@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    name: ruby-${{ matrix.ruby }} / minitest-${{ matrix.minitest }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ["3.2", "3.3", "4.0"]
+        minitest: ["5", "6"]
+        include:
+          - ruby: "3.1"
+            minitest: "5"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Install dependencies
+        env:
+          MINITEST_VERSION: ${{ matrix.minitest }}
+        run: bundle install
+      - name: Run tests
+        env:
+          MINITEST_VERSION: ${{ matrix.minitest }}
+        run: bundle exec rake

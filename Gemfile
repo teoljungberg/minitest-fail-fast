@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in minitest-fail-fast.gemspec
 gemspec
+
+if ENV['MINITEST_VERSION']
+  gem 'minitest', "~> #{ENV['MINITEST_VERSION']}.0"
+end
