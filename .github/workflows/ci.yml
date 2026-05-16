@@ -31,3 +31,12 @@ jobs:
         env:
           MINITEST_VERSION: ${{ matrix.minitest }}
         run: bundle exec rake
+
+  ci:
+    name: CI
+    needs: [test]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - run: |
+          [[ "${{ needs.test.result }}" == "success" ]] || exit 1
